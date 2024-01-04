@@ -1,6 +1,106 @@
 .main-box {
-  width: 45%;
-  height: 300px;
+  height: auto;
+  /* Instead of fixed height */
+  margin-top: 20px;
+  /* Reduced margin top for smaller screens */
+  padding: 15px;
+}
+
+.top-bar {
+  width: 100%;
+  /* Adjusted width */
+  max-width: 280px;
+  /* Maximum width for smaller screens */
+  margin: 0 auto;
+  /* Centered */
+  position: static;
+  /* Removed absolute positioning */
+  margin-bottom: 20px;
+}
+
+.top-bar h2 {
+  font-size: 18px;
+  /* Adjusted font size */
+}
+
+.data-box {
+  flex-direction: column;
+  /* Adjusted direction for smaller screens */
+  margin-top: 20px;
+  /* Reduced top margin */
+  margin-bottom: 20px;
+  /* Reduced bottom margin */
+}
+
+.details {
+  gap: 10px;
+  /* Reduced gap */
+}
+
+.swiper {
+  margin-top: 30px;
+  /* Adjusted margin top */
+  max-width: 100%;
+  /* Full width for smaller screens */
+  /* Avoid horizontal scrolling */
+}
+
+.swiper-slide {
+  padding: 15px;
+  /* Added padding */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Your existing styles... */
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-slide h1 {
+  font-size: 18px;
+}
+
+.swiper-slide p {
+  font-size: 15px;
+}
+
+.vip {
+  margin-bottom: 10px;  
+  align-self: flex-start;
+}
+
+.para{
+  line-height: 0px;
+  margin-top: 50px;
+  
+}
+
+.vip>p:first-of-type {
+  font-size: 26px;
+  line-height: 0px;
+  margin-top: 15px;
+}
+
+
+.main-box {
+  width: 100%;
+  height: 322.97px;
   border-radius: 10px;
   background-image: linear-gradient(rgb(120, 55, 15), rgb(26, 24, 24));
   display: flex;
@@ -20,19 +120,20 @@
   font-size: 16px;
   font-weight: 700;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(240, 63, 13) !important;
 }
 
 /* .date{
-    margin: 20px;
+margin: 20px;
 } */
 .top-bar {
   border: 1px solid black;
-  width: 250px;
+  width: 280px;
   position: absolute;
-  height: 50px;
-  top: 18px;
+  height: 60px;
+  top: 5px;
+  margin-bottom: 20px;
   background-color: black;
   font-size: 12px;
   text-align: center;
@@ -44,16 +145,21 @@
 
 .top-bar h2 {
   color: white;
+  font-weight: bold;
+  font-size: 22px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .details li {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .data-box {
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 30px;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
@@ -66,38 +172,51 @@
   justify-content: center;
   align-items: center;
 }
+
 .container {
-  /* display: flex;
-    flex-direction:row; */
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction:row; */
+  /* flex-direction: column; */
+  /* gap: 20px;
+width: 100%;
+justify-content: center;
+align-items: center; */
 }
 
 /* ................slider css........... */
 
 
-.mySwiper .swiper-button-next{
-  right: -100px!important;
+.swiper-pagination .swiper-pagination-bullet {
+  /* Increase bullet size */
+  width: 13px;
+  height: 13px;
+  /* Change bullet color to white */
+  background-color: white;
 }
-.mySwiper .swiper-button-next:after{
+
+.mySwiper .swiper-button-next {
+  right: -100px !important;
+}
+.mySwiper .swiper-button-prev {
+
+  left: -100px !important;
+}
+.mySwiper .swiper-button-next:after {
   color: white;
 }
+
 .mySwiper .swiper-button-prev:after {
   color: #fff;
 }
-.mySwiper .swiper-button-prev{
 
-  left: -100px!important;
-}
 
-.swiper-pagination{
+
+.swiper-pagination {
   bottom: -30px !important;
-  
+
 }
 
-.swiper-bullet{
+.swiper-bullet {
   height: 20px;
   width: 20px;
 }
@@ -111,12 +230,14 @@
   align-items: center;
   flex-direction: row;
 }
+
 .mySwiper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 html,
 body {
   position: relative;
@@ -140,18 +261,19 @@ body {
   margin: 0;
   padding: 0;
 }
-/* 
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } */
+/* 
+html,
+body {
+position: relative;
+height: 100%;
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+} */
 
 .swiper {
   margin-top: 50px;
@@ -160,14 +282,12 @@ body {
 }
 
 .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 18px;
   font-size: 22px;
-  text-align: center;
   font-weight: bold;
   color: #fff;
+  padding-left: 30px;
+  height: 100%;
 }
 
 .swiper-slide:nth-child(1n) {
@@ -208,4 +328,13 @@ body {
 
 .swiper-slide:nth-child(10n) {
   background-color: rgb(54, 94, 77);
+}
+@media (max-width: 575px) {
+  .mySwiper .swiper-button-next {
+  right: 0 !important;
+}
+.mySwiper .swiper-button-prev {
+
+  left: 0 !important;
+}
 }
