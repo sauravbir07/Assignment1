@@ -1,35 +1,36 @@
 .main-box {
   height: auto;
-  /* Instead of fixed height */
+ 
   margin-top: 20px;
-  /* Reduced margin top for smaller screens */
+ 
   padding: 15px;
 }
 .dotted-border {
-  border: 1px dotted white; /* Define border style and color */
-  padding: 10px; /* Adjust padding if necessary */
+  border: 1px dotted white; 
+  padding: 10px;
 }
+
 
 .top-bar {
   width: 100%;
 
-  /* Adjusted width */
+  
   max-width: 280px;
-  /* Maximum width for smaller screens */
+  
   margin: 0 auto;
-  /* Centered */
+  
   position: static;
-  /* Removed absolute positioning */
+  
   margin-bottom: 20px;
 }
 
 .data-box {
   flex-direction: column;
-  /* Adjusted direction for smaller screens */
+ 
   margin-top: 20px;
-  /* Reduced top margin */
+
   margin-bottom: 20px;
-  /* Reduced bottom margin */
+ 
 }
 
 .details {
@@ -37,23 +38,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Reduced gap */
+ 
 }
 
 .swiper {
   margin-top: 30px;
-  /* Adjusted margin top */
+  
   max-width: 100%;
-  /* Full width for smaller screens */
-  /* Avoid horizontal scrolling */
+
+  
 }
 
 .swiper-slide {
   padding: 15px;
-  /* Added padding */
+
 }
 
-/* Your existing styles... */
+
 .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -127,27 +128,26 @@
   height: 70px;
   top: 5px;
   /* margin-bottom: 20px; */
- 
-  background: linear-gradient(80deg, #ffa164,#ffa164);
+
+  background: linear-gradient(80deg, #ffa164, #ffa164);
   border-radius: 100px;
   border: 6px dotted white;
   z-index: 1;
 }
 .top-bar {
   width: 278px;
-    animation: shadow 3s linear infinite;
-    position: absolute;
-    height: 58px;
-    top: 0px;
-    margin-bottom: 20px;
-    background-color: black;
-    font-size: 12px;
-    /* text-align: center; */
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
+  animation: shadow 3s linear infinite;
+  position: absolute;
+  height: 58px;
+  top: 0px;
+  margin-bottom: 20px;
+  background-color: black;
+  font-size: 12px;
+  /* text-align: center; */
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .top-bar h2 {
@@ -376,15 +376,39 @@ body {
 }
 
 .member {
-  margin-left: -30px;
+  margin-left: -20px;
 }
 
 .details {
   overflow: hidden;
 
-  height: 220px;
+  max-height: 210px;
 }
-.details li {
+
+.details li:nth-child(1n) {
+  animation: moveUp 1s infinite linear;
+  animation-duration: 3s;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(90%);
+   
+  }
+
+  80% {
+    transform: translateY(90%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+/* Add similar styles for more list items */
+
+/* .details li {
   animation: moveUp 1.5s infinite;
 }
 
@@ -395,4 +419,42 @@ body {
   100% {
     transform: translateY(-100%);
   }
+} */
+@keyframes zoomInOut {
+  0% {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    transform: scale(1);
+  }
 }
+
+
+
+.top-bar::before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: zoomInOut 3s linear infinite;
+  z-index: -1;
+  width: 278px;
+  position: absolute;
+  height: 58px;
+  top: 0px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  /* text-align: center; */
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+  
